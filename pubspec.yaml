@@ -24,9 +24,9 @@ dependencies:
   flutter:
     sdk: flutter
   #Flutter Bloc Stuff
-  flutter_bloc: ^4.0.0
+  bloc: ^6.0.1
+  flutter_bloc: ^6.0.1
   equatable: ^1.2.0
-  hydrated_bloc: ^4.0.0
   provider: ^4.0.5
 
 
