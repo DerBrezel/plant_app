@@ -1,7 +1,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:plant_app/src/ui/mainScreen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:plant_app/src/blocs/add_my_plant/my_plants_bloc.dart';
+import 'package:plant_app/src/repository/plant_repository.dart';
+import 'package:plant_app/src/ui/testScreen.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -25,7 +28,10 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MainScreen(),
+      home: BlocProvider(
+        create: (context) => MyPlantsBloc(FakePlantRepository()),
+        child: TestScreen(),
+      ),
     );
   }
 }

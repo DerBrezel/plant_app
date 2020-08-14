@@ -6,5 +6,7 @@ class GetMyPlants extends MyPlantsEvent {
   final String plants;
 
   GetMyPlants(this.plants);
+}
 
+class GetAllPlants extends MyPlantsEvent {
 }

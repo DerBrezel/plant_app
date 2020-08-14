@@ -28,6 +28,12 @@ class MyPlantsLoaded extends MyPlantsState {
   int get hashCode => plant.hashCode;
 }
 
+class AllPlantsLoaded extends MyPlantsState {
+  final List<Plant> plants;
+
+  const AllPlantsLoaded(this.plants);
+}
+
 class MyPlantsError extends MyPlantsState {
   final String message;
   const MyPlantsError(this.message);

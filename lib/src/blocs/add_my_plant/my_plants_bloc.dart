@@ -24,6 +24,14 @@ class MyPlantsBloc extends Bloc<MyPlantsEvent, MyPlantsState> {
       } on NetworkException {
         yield MyPlantsError("Couldn't fetch Plant. Is this device online?");
       }
+    } else if (event is GetAllPlants){
+      try {
+        yield MyPlantsLoading();
+        final plants = await _plantRepository.fetchAllPlants();
+        yield AllPlantsLoaded(plants);
+      } on NetworkException {
+        yield MyPlantsError("Couldn't fetch Plant, no wifi?");
+      }
     }
   }
 }
