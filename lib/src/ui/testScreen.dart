@@ -73,7 +73,9 @@ class _MainScreenState extends State<TestScreen>{
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Text(allPlants[index].name),
+              child: FlatButton(
+                onPressed: () {BlocProvider.of<MyPlantsBloc>(context).add(AddToMyPlants(allPlants[index]));},
+                  child: Text(allPlants[index].name)),
             );
           }),
         ),
@@ -117,6 +119,6 @@ class PlantInputField extends StatelessWidget {
   }
 
   void submitPlantName(BuildContext context, String plant){
-    BlocProvider.of<MyPlantsBloc>(context).add(GetMyPlants(plant));
+    BlocProvider.of<MyPlantsBloc>(context).add(GetPlant(plant));
   }
 }

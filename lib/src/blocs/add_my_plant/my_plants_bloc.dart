@@ -9,6 +9,7 @@ part 'my_plants_state.dart';
 
 class MyPlantsBloc extends Bloc<MyPlantsEvent, MyPlantsState> {
   final PlantRepository _plantRepository;
+  final List<Plant> myPlants = [];
 
   MyPlantsBloc(this._plantRepository) : super(MyPlantsInitial());
 
@@ -16,7 +17,7 @@ class MyPlantsBloc extends Bloc<MyPlantsEvent, MyPlantsState> {
   Stream<MyPlantsState> mapEventToState(
     MyPlantsEvent event,
   ) async* {
-    if(event is GetMyPlants){
+    if(event is GetPlant){
       try {
         yield MyPlantsLoading();
         final plant = await _plantRepository.fetchPlant(event.plants);
@@ -31,6 +32,12 @@ class MyPlantsBloc extends Bloc<MyPlantsEvent, MyPlantsState> {
         yield AllPlantsLoaded(plants);
       } on NetworkException {
         yield MyPlantsError("Couldn't fetch Plant, no wifi?");
+      }
+    } else if (event is AddToMyPlants){
+      try {
+        myPlants.add(event.plant);
+      } on NetworkException {
+        yield MyPlantsError("Whoops can't add plant");
       }
     }
   }
