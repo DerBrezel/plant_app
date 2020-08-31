@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:plant_app/src/blocs/add_my_plant/my_plants_bloc.dart';
 import 'package:plant_app/src/repository/plant_repository.dart';
-import 'package:plant_app/src/ui/MyPlantOverview.dart';
-//import 'package:plant_app/src/ui/testScreen.dart';
+import 'package:plant_app/src/ui/NavBarNavigation.dart';
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -29,15 +29,17 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
-          headline1: TextStyle(fontSize: 50, fontFamily: 'Yeseva_One'),
-          headline2: TextStyle(fontSize: 26, fontFamily: 'Yeseva_One'),
-          bodyText1: TextStyle(fontSize: 16, fontFamily: 'Assistant'),
-          bodyText2: TextStyle(fontSize: 16, fontFamily: 'Assistant'),
+          headline1: TextStyle(fontSize: 50, fontFamily: 'Yeseva_One', color: Colors.black54),
+          headline2: TextStyle(fontSize: 26, fontFamily: 'Yeseva_One', color: Colors.black54),
+          headline3: TextStyle(fontSize: 18, fontFamily: 'Yeseva_One', color: Colors.black54),
+
+          bodyText1: TextStyle(fontSize: 16, fontFamily: 'Assistant', color: Colors.black54),
+          bodyText2: TextStyle(fontSize: 24, fontFamily: 'Assistant', color: Colors.black54),
         )
       ),
       home: BlocProvider(
         create: (context) => MyPlantsBloc(FakePlantRepository()),
-        child: MyPlantOverview(),
+        child: NavBarNavigation(),
       ),
     );
   }
