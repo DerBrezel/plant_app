@@ -39,7 +39,7 @@ class _MyPlantOverviewState extends State<MyPlantOverview> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 16, right: 8, left: 8),
+                margin: const EdgeInsets.only(top: 8, right: 8, left: 8),
                 height: SizeConfig.screenHeight * 0.6,
                 child: GridView.builder(
                     itemCount: 5,
@@ -49,9 +49,10 @@ class _MyPlantOverviewState extends State<MyPlantOverview> {
                       return Container(
                         child: Column(
                           children: <Widget>[
-                            Icon(
-                              CupertinoIcons.clear_circled_solid,
-                              size: 80,
+                            Container(
+                              height: 80,
+                              width: 80,
+                              child: Image.asset("assets/plants/plant3.png"),
                             ),
                             Text(
                               "Aspergus",
