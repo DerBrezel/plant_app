@@ -34,7 +34,7 @@ class _NavBarNavigationState extends State<NavBarNavigation>{
         selectedItemColor: Colors.amber[800],
         unselectedItemColor: Colors.white,
         onTap: _onItemTapped,
-        backgroundColor: Color(0xFF425041),
+        backgroundColor: Color(0xFF41515B),
       ),
         body: IndexedStack(
           index: _selectedIndex,
