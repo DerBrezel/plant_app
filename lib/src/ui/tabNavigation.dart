@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app/src/ui/MyPlantOverview.dart';
+import 'package:plant_app/src/ui/SearchPlant.dart';
 import 'package:plant_app/src/ui/testScreen.dart';
 
 class TabNavigationItem {
@@ -22,9 +23,14 @@ class TabNavigationItem {
       title: Text('Home')
     ),
     TabNavigationItem(
-      page: TestScreen(),
+      page: SearchPlant(),
       icon: Icon(Icons.add_circle_outline),
-      title: Text('AddPlant')
+      title: Text("Search Plant")
+    ),
+    TabNavigationItem(
+      page: TestScreen(),
+      icon: Icon(Icons.info),
+      title: Text('TestScreen')
 
     )
   ];

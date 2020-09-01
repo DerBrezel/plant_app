@@ -36,7 +36,7 @@ class _MyPlantOverviewState extends State<MyPlantOverview> {
               gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [const Color(0xFFE6E7EB), const Color(0xFFBFD6E7)],
+            colors: [const Color(0xFFd0efce), const Color(0xFFb8cfc9)],
             tileMode: TileMode.repeated,
           )),
           child: Column(
